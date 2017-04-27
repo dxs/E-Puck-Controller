@@ -34,14 +34,14 @@ namespace RemoSon2
 			set { fY = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FY))); }
 		}
 
-		private ushort fLow = 110;
+		private ushort fLow = 250;
 		public ushort FLow
 		{
 			get { return fLow; }
 			set { fLow = value;PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FLow))); }
 		}
 
-		private ushort fHigh = 110;
+		private ushort fHigh = 250;
 		public ushort FHigh
 		{
 			get { return fHigh; }

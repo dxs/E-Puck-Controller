@@ -17,9 +17,11 @@
 			<RowDefinition Height="Auto" />
 			<RowDefinition />
 			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
-		<StackPanel Grid.Row="0">
+		<StackPanel Grid.Row="0" HorizontalAlignment="Center" Orientation="Horizontal">
 			<TextBlock Text="{x:Bind Data.FX,Mode=OneWay,Converter={StaticResource FreqConverter}}" Margin="10"/>
+			<Rectangle Width="1" Height="15" Fill="Gray" VerticalAlignment="Center"/>
 			<TextBlock Text="{x:Bind Data.FY,Mode=OneWay,Converter={StaticResource FreqConverter}}" Margin="10"/>
 		</StackPanel>
 
@@ -29,12 +31,14 @@
 			<MediaElement x:Name="Player2" IsLooping="True"/>
 		</Grid>
 
-		<StackPanel Grid.Row="2" Orientation="Horizontal">
-			<ToggleSwitch IsOn="{x:Bind Data.IsOn,Mode=TwoWay}" Margin="10"/>
-			<!--<TextBox Text="{x:Bind Data.FLow,Mode=TwoWay}" Header="Freq X Start" Margin="10"/>
-			<TextBox Text="{x:Bind Data.FHigh,Mode=TwoWay}" Header="Freq Y Start" Margin="10"/>-->
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+			<ToggleSwitch IsOn="{x:Bind Data.IsOn,Mode=TwoWay}" Margin="10" Header="Mirror"/>
+			<TextBox Text="{x:Bind Data.FLow,Mode=TwoWay}" Header="Freq X Start" Margin="10"/>
+			<TextBox Text="{x:Bind Data.FHigh,Mode=TwoWay}" Header="Freq Y Start" Margin="10"/>
+		</StackPanel>
+		<StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
 			<Button Content="Calibrate" Click="Button_Click" Margin="10"/>
-			<ToggleSwitch IsOn="{x:Bind Accel.IsOn,Mode=TwoWay}" />
+			<ToggleSwitch IsOn="{x:Bind Accel.IsOn,Mode=TwoWay}" Margin="10" Header="Use Accelerometer"/>
 		</StackPanel>
 	</Grid>
 </Page>
